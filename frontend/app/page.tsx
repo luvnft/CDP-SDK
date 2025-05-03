@@ -1,15 +1,17 @@
 "use client";
 
-import { useState } from "react";
-import { pinata } from "@/utils/pinataConfig";
+// Removed unused import:
+// import { useState } from "react";
+// import { pinata } from "@/utils/pinataConfig";
 
-// Move these types and components to top-level
+// Moved DeploymentStep interface to the top as a best practice
 interface DeploymentStep {
   message: string;
   status: 'pending' | 'loading' | 'complete' | 'error';
 }
 
-const DeploymentStatus = ({ steps }: { steps: DeploymentStep[] }) => {
+// Exported component so it's usable, or remove if unused
+export const DeploymentStatus = ({ steps }: { steps: DeploymentStep[] }) => {
   return (
     <div className="w-full max-w-md bg-white p-6 mt-6 rounded-lg shadow-md">
       <h3 className="font-bold mb-4 text-gray-800">Deployment Progress</h3>
